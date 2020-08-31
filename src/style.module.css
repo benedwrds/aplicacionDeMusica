@@ -1,0 +1,24 @@
+.welcome {
+  padding: 12px;
+  margin-left: 30px;
+}
+
+.login {
+  margin-left: 35%;
+  width: 50%;
+  padding: 10px;
+}
+
+.notify {
+  margin-left: 43px;
+}
+
+.systemPref {
+  margin-left: 43px;
+  padding: 3px;
+
+}
+
+.cardContent {
+  padding: 10px;
+}

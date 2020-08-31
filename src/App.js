@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button'
+import Dashboard from './components/Dashboard'
+import NavBar from './components/NavBar'
 import './App.css';
+import styles from './style.module.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+export class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      loggedIn: false
+    }
+
+  }
+
+  handleClick = () => {
+    this.setState({
+      loggedIn: true
+    })
+  }
+
+  render() {
+    if (this.state.loggedIn) {
+      return <Dashboard/>
+    } else {
+    return (
+    <div>
+        <NavBar/>
+      <div className={styles["login"]}>
+        <TextField> </TextField>
+        <br/>
+        <TextField> </TextField>
+        <br/>
+        <Button onClick={this.handleClick}>Login</Button>
+      </div>
     </div>
-  );
+      
+
+      )
+    }
+  }
 }
 
-export default App;
+export default App
+
